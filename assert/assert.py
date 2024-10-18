@@ -22,3 +22,4 @@ def delete_product_ok(user, product_id):
         raise ValueError('неизвестный товар')
     store.get_product(product_id).delete()
 
+
