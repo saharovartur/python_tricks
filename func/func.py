@@ -17,7 +17,7 @@ print(gt("Привет"))
 
 
 # Пример замыкания
-def get_speak_func_2(text, volume):
+def get_speak_func_2(text: object, volume: object) -> object:
     def whisper():
         return text.lower() + "..."
 
@@ -37,8 +37,8 @@ print(gp)  # или вызов сделаем так get_speak_func_2('как д
 # Еще пример замыкания
 
 
-def make_adder(n):
-    def add(x):
+def make_adder(n: object) -> object:
+    def add(x: object) -> object:
         return x + n
 
     return add
@@ -65,3 +65,16 @@ class Adder:
 # Вывод
 plus3 = Adder(3)
 plus3(4)  # Вызываем объект как функцию и передаем значение
+
+# Пример lambda функции
+numbers = lambda x, y: x + y
+numbers(3, 3)
+
+(lambda x, y: x + y)(5, 3)
+
+# Пример сортировки
+tuples = [(1, 'd'), (2, 'b'), (4, 'a'), (3, 'c')]
+sorted(tuples, key=lambda x: x[1])
+
+[(4, 'a'), (2, 'b'), (3, 'c'), (1, 'd')]  # Вывод, сортировка по второму значению
+
