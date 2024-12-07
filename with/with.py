@@ -1,14 +1,13 @@
 #  Простой пример работы инструкции with
-with open('doc.txt', 'w') as f:
-    f.write('Запишем это сюда')
+with open("doc.txt", "w") as f:
+    f.write("Hello")
 
-#  Что происходит внутри?
-f = open('doc.txt', 'w')
+# Что происходит внутри?
+f = open("doc.txt", "w")
 try:
-    f.write('Запишем это сюда')
+    f.write("Запишем это сюда")
 finally:
     f.close()
-
 
 
 #  Менеджер контекста
@@ -17,7 +16,7 @@ class ManagedFile:
         self.name = name
 
     def __enter__(self):
-        self.file = open(self.name, 'w')
+        self.file = open(self.name, "w")
         return self.file
 
     def __exit__(self, exc_type, exc_val, exc_tb):
