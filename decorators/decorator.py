@@ -31,3 +31,25 @@ def emphasis(func):
 @emphasis
 def greet():
     return f"Привет!"
+
+
+# Пример функции декоратора с аргументами
+def proxy(func):
+    def wrapper(*args, **kwargs):
+        return func(*args, **kwargs)
+    return wrapper
+
+
+def trace(func):
+    def wrapper(*args, **kwargs):
+        print(f'Трассировка: вызвана {func.__name__}()' f'c {args}, {kwargs}')
+
+        original_result = func(*args, **kwargs)
+        print(f'Трассировка: {func.__name__}()' f'вернула {original_result}')
+
+        return original_result
+    return wrapper
+
+@trace
+def say(name, line):
+    return f'{name}: {line}'
