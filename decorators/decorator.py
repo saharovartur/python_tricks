@@ -53,3 +53,7 @@ def trace(func):
 @trace
 def say(name, line):
     return f'{name}: {line}'
+
+
+def print_vector(x, y, z):
+    print('<%s, %s, %s>' % (x, y, z))
