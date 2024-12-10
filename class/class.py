@@ -1,4 +1,3 @@
-
 # Тестовы класс
 class Car:
     def __init__(self, color, mileage):
@@ -13,4 +12,21 @@ class NameTooShortError(ValueError):
 
 def validate(name):
     if len(name) < 10:
-        raise NameTooShortError(name) # получим ошибку с понятным для нас описанием
+        raise NameTooShortError(name)  # получим ошибку с понятным для нас описанием
+
+
+# Пример иерархии исключений с помощью наследования
+class BaseViladationError(ValueError):
+    pass
+
+
+class NameTooShortError(BaseViladationError):
+    pass
+
+
+class Dog:
+    num_legs = 4
+
+    def __init__(self, name):
+        self.name = name
+
