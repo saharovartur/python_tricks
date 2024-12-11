@@ -1,4 +1,4 @@
-
+from collections import Counter
 
 # base set
 num = {1, 2, 3, 4, 5, 'a', 7, 8, 10}
@@ -9,3 +9,6 @@ numb = frozenset({1, 2, 3})
 # Можно использовать  как ключ словаря
 d = {frozenset({1, 2, 3}): 'привет'}
 d[frozenset({1, 2, 3})]
+
+
+
