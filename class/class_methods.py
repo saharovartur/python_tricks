@@ -4,15 +4,15 @@ import math
 # Пример трех методов (метод экземляра, метод класса, статический метод)
 class MyClass:
     def method(self):
-        return 'вызван метод экземпляра', self
+        return "вызван метод экземпляра", self
 
     @classmethod
     def classmethod(cls):
-        return 'вызван метод класса', cls
+        return "вызван метод класса", cls
 
     @staticmethod
     def staticmethod():
-        return 'вызван статический метод'
+        return "вызван статический метод"
 
 
 class Pizza:
@@ -20,15 +20,15 @@ class Pizza:
         self.ingredients = ingredients
 
     def __repr__(self):
-        return f'Pizza({self.ingredients!r}'
+        return f"Pizza({self.ingredients!r}"
 
     @classmethod
     def margherita(cls):
-        return cls(['моцарелла', 'помидоры'])
+        return cls(["моцарелла", "помидоры"])
 
     @classmethod
     def prosciutto(cls):
-        return cls(['моцарелла', 'помидоры', 'ветчина'])
+        return cls(["моцарелла", "помидоры", "ветчина"])
 
 
 class Pizza:
@@ -37,11 +37,11 @@ class Pizza:
         self.ingredients = ingredients
 
     def __repr__(self):
-        return (f'Pizza({self.radius!r},' f'{self.ingredients!r})')
+        return f"Pizza({self.radius!r}," f"{self.ingredients!r})"
 
     def area(self):
         return self.circle_area(self.radius)
 
     @staticmethod
     def circle_area(r):
-        return r ** 2 * math.pi
+        return r**2 * math.pi
