@@ -1,5 +1,7 @@
 # Подкопотная работа итератора
 
+
+# Длинный вариант-реализация итератора
 class RepeaterIterator:
     def __init__(self, source):
         self.source = source
@@ -15,17 +17,26 @@ class Repeater:
     def __iter__(self):
         return RepeaterIterator(self)
 
+
+# Короткий вариант реализации итератора
+class RepeaterTwo:
+    def __init__(self, value):
+        self.value = value
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        return self.value
+
+
 # Пример реализации цикла вместо синтак.сахара for-in
-repeater = Repeater('Privet')
+repeater = Repeater("Privet")
 iterator = repeater.__iter__()
 
 while True:
     item = iterator.__next__()
     print(item)
-
-
-
-
 
 
 # repeater = Repeater('Привет')
